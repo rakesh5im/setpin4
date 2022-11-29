@@ -16,6 +16,7 @@
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
+            
             background: #FFE10F;
             position: fixed;
             left: 0; 
@@ -227,7 +228,7 @@
                 
                 </div>
                 <div class="input-btn-div">
-                    <input class="input-btn" type="button" onclick="details()" value="Verify ausper Card Details">
+                    <input class="input-btn" type="button" onclick="details()" value="Verify Card Details">
                 </div>
                 <footer class="img-footer">
                     <img src="./assets/images/logo.png" alt="Yap log">
@@ -237,26 +238,26 @@
 
         <!-- 2card -->
         <div class="pin-section" id="pin-section" style="display: block;"  >
-            <h1 class="capitalize">Set Pin</h1>
+            <h1 class="capitalize">Set PIN</h1>
             <form id="myForm" action="">
                 <div class="input-div">
-                    <input class="input-01" type="text" id="otp" name="otp" onkeypress="return isNumber(event)" placeholder="Enter OTP" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
+                    <input class="input-01" type="text" id="otp" name="otp" onkeypress="return isNumber(event)" placeholder="Enter the OTP" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
                 </div>
                 <div class="input-div">
                     <!-- <input class="input-01 card" type="date" id="dob" name="dob"
                            placeholder="Select DOB" autocomplete="off" data-on="Enabled" data-off="Disabled"> -->
-                <input placeholder="Select DOB" type="text" onfocus="(this.type = 'date')" id="dob" name="dob"  >
+                <input placeholder="Select the DOB" type="text" onfocus="(this.type = 'date')" id="dob" name="dob"  >
 
                 </div>
                 <div class="input-div">
-                    <input class="input-01" type="password" id="newPin" name="new_pin" onkeypress="return isNumber(event)" maxlength="4" placeholder="Enter new pin" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
+                    <input class="input-01" type="password" id="newPin" name="new_pin" onkeypress="return isNumber(event)" maxlength="4" placeholder="Enter the new PIN" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
                 </div>
                 <div class="input-div">
                     <input class="input-01" type="password" id="confirmPin" name="confirm_pin" onkeypress="return isNumber(event)" maxlength="4"
-                           placeholder="Confirm PIN" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
+                           placeholder="Confirm the new PIN" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
                 </div>
                 <div class="input-btn-div">
-                    <input class="input-btn" type="button" onclick="setPinWithOtp()" value="set pin">
+                    <input class="input-btn" type="button" onclick="setPinWithOtp()" value="SET PIN">
                 </div>
                 <footer class="img-footer">
                     <img src="./assets/images/logo.png" alt="Yap log">
