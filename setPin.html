@@ -25,6 +25,7 @@
             top: 0;
             bottom: 0;
             padding-top: 15px;
+            ;
             /* background: -webkit-linear-gradient(-135deg, #c850c0, #4158d0);
             background: -o-linear-gradient(-135deg, #c850c0, #4158d0);
             background: -moz-linear-gradient(-135deg, #c850c0, #4158d0);
@@ -121,7 +122,7 @@
             display: block;
             justify-content: center;
             align-items: center;
-            padding: 0 25px;
+            /* padding: 0 25px; */
             transition: all 0.4s;
         }
 
@@ -135,7 +136,7 @@
         }
 
         .capitalize {
-            /* text-transform: capitalize; */
+
             padding: 20px 110px;
             /* background-color: #8555c8; */
             font-size: 17px;
@@ -194,13 +195,18 @@
 
             }
 
-            #expiry_date::placeholder {
+            #dob::placeholder {
                 font-size: 12px;
 
             }
 
             .exp-date::placeholder {
                 font-size: 12px;
+            }
+
+            #expiry_date::placeholder {
+                font-size: 12px;
+
             }
 
             .input-btn {
@@ -217,7 +223,7 @@
     <div class="main-section">
         <div class="card-section">
             <!-- 1st card -->
-            <div class="details-section" id="details-section" style="display: block;">
+            <div class="details-section" id="details-section" style="display: none;">
                 <h1 class="capitalize">Enter ausper Card Details</h1>
                 <form id="myForm" action="">
                     <div class="input-div">
@@ -240,13 +246,20 @@
             </div>
 
             <!-- 2card -->
-            <div class="pin-section" id="pin-section" style="display: none;">
+            <div class="pin-section" id="pin-section" style="display: block;">
                 <h1 class="capitalize">Set PIN</h1>
                 <form id="myForm" action="">
                     <div class="input-div">
                         <input class="input-01" type="text" id="otp" name="otp" onkeypress="return isNumber(event)"
                             placeholder="Enter the OTP"
                             oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
+                    </div>
+                    <div class="input-div">
+                        <!-- <input class="input-01 card" type="date" id="dob" name="dob"
+                           placeholder="Select DOB" autocomplete="off" data-on="Enabled" data-off="Disabled"> -->
+                        <input placeholder="Select the DOB" type="text" onfocus="(this.type = 'date')" id="dob"
+                            name="dob">
+
                     </div>
                     <div class="input-div">
                         <input class="input-01" type="password" id="newPin" name="new_pin"
@@ -361,10 +374,8 @@
     var randomToken = randomUrlToken.match(matchToken);
 
     function details() {
-
         var card_number = document.getElementById("card_number").value;
         var expiry_date = $("#expiry_date").val();
-
         if (expiry_date === "" || expiry_date === null) {
             alert("Enter Expiry Date (MMYY)");
         }
@@ -396,15 +407,14 @@
                     alert(XMLHttpRequest.responseText);
                 }
             });
+
         }
     }
 
     function setPinWithOtp() {
-
-
         var otp = document.getElementById("otp").value;
         // var dob = document.getElementById("dob").value;
-        var dob = '1996-06-14';;
+        var dob = $("#dob").val();
         dob = moment(dob).format("DDMMYYYY");
 
         var newPin = document.getElementById("newPin").value;
@@ -418,6 +428,8 @@
             alert("Enter OTP");
         } else if (newPin === "" || newPin === null) {
             alert("Enter New PIN");
+        } else if (dob === "" || dob === null) {
+            alert("Enter DOB");
         } else if (confirmPin === "" || confirmPin === null) {
             alert("Enter Confirm PIN");
         } else if (newPin !== confirmPin) {
@@ -459,6 +471,7 @@
                 }
             });
         }
+
     }
 
     function isNumber(evt) {
