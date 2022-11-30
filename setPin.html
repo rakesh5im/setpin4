@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <title>Set Pin</title>
+    <title>Set PIN</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
@@ -16,15 +17,14 @@
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
-            
+
             background: #FFE10F;
             position: fixed;
-            left: 0; 
+            left: 0;
             right: 0;
-            top:0;
+            top: 0;
             bottom: 0;
             padding-top: 15px;
-;
             /* background: -webkit-linear-gradient(-135deg, #c850c0, #4158d0);
             background: -o-linear-gradient(-135deg, #c850c0, #4158d0);
             background: -moz-linear-gradient(-135deg, #c850c0, #4158d0);
@@ -117,11 +117,11 @@
             border-radius: 25px;
             border: none;
             background: #FFE10F;
-;
+            ;
             display: block;
             justify-content: center;
             align-items: center;
-            /* padding: 0 25px; */
+            padding: 0 25px;
             transition: all 0.4s;
         }
 
@@ -135,7 +135,7 @@
         }
 
         .capitalize {
-           
+            /* text-transform: capitalize; */
             padding: 20px 110px;
             /* background-color: #8555c8; */
             font-size: 17px;
@@ -149,123 +149,125 @@
         .input-pd {
             padding: 0px 50px;
         }
+
         ::placeholder {
             font-family: "Gotham-Light";
 
         }
+
         @font-face {
             font-family: "Gotham-Bold";
             src: url("./assets/Gotham-Font/Gotham-Bold.otf");
         }
+
         @font-face {
             font-family: "Gotham-Light";
             src: url("./assets/Gotham-Font/Gotham-Light.otf");
         }
 
 
-        #expiry_date,#dob{
-        border: none;
-        background: #e6e6e6;
-        display: block;
-        padding: 15px 20px;
-        width: 74%;
-        outline: none;
-        color: #666666;
-        height: 20px;
-        border-radius: 25px;
-        font-family: "Gotham-Light";
-        font-size: 15px;
-        transition: 250ms width ease, 250ms border-color ease;
+        #expiry_date,
+        #dob {
+            border: none;
+            background: #e6e6e6;
+            display: block;
+            padding: 15px 20px;
+            width: 74%;
+            outline: none;
+            color: #666666;
+            height: 20px;
+            border-radius: 25px;
+            font-family: "Gotham-Light";
+            font-size: 15px;
+            transition: 250ms width ease, 250ms border-color ease;
         }
 
-        @media (min-width:320px)  { 
+        @media (min-width:320px) {
             .capitalize {
                 padding: 26px 51px;
                 font-size: 15px;
 
             }
-            .input-01::placeholder{
+
+            .input-01::placeholder {
                 font-size: 12px;
 
             }
-            #dob::placeholder{
+
+            #expiry_date::placeholder {
                 font-size: 12px;
 
             }
-          
-            .exp-date::placeholder{
+
+            .exp-date::placeholder {
                 font-size: 12px;
             }
+
             .input-btn {
                 font-size: 13px;
             }
-            
+
 
 
         }
-
-      
     </style>
 </head>
+
 <body>
-<div class="main-section">
-    <div class="card-section">
-        <!-- 1st card -->
-        <div class="details-section" id="details-section " style="display: none;" >
-            <h1 class="capitalize">Enter ausper Card Details</h1>
-            <form id="myForm" action="">
-                <div class="input-div">
-                    <input class="input-01" type="text" id="card_number" name="card_number"
-                           placeholder="Enter last 6 digits of card  number"  onkeypress="return isNumber(event)" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" maxlength="6">
-                </div>
-                <!-- <div class="input-div">
-                    <input class="input-01" type="text" id="kit_no" name="kit_no" placeholder="Enter kit number" onkeypress="return isNumber(event)" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
-                </div> -->
-                <div class="input-div">
-                    
-                    <input placeholder="Choose card’s expiry date" type="text" onfocus="(this.type = 'date')" id="dob" name="dob"  >
-                        
-                
-                </div>
-                <div class="input-btn-div">
-                    <input class="input-btn" type="button" onclick="details()" value="Verify Card Details">
-                </div>
-                <footer class="img-footer">
-                    <img src="./assets/images/logo.png" alt="Yap log">
-                </footer>
-            </form>
-        </div>
+    <div class="main-section">
+        <div class="card-section">
+            <!-- 1st card -->
+            <div class="details-section" id="details-section" style="display: block;">
+                <h1 class="capitalize">Enter ausper Card Details</h1>
+                <form id="myForm" action="">
+                    <div class="input-div">
+                        <input class="input-01" type="text" id="card_number" name="card_number"
+                            placeholder="Enter last 6 digits of card number" onkeypress="return isNumber(event)"
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                            maxlength="6">
+                    </div>
+                    <div class="input-div">
+                        <input placeholder="Choose card’s expiry date" type="text" onfocus="(this.type = 'month')"
+                            id="expiry_date" name="expiry_date">
+                    </div>
+                    <div class="input-btn-div">
+                        <input class="input-btn" type="button" onclick="details()" value="Verify Card Details">
+                    </div>
+                    <footer class="img-footer">
+                        <img src="./assets/images/logo.png" alt="Yap log">
+                    </footer>
+                </form>
+            </div>
 
-        <!-- 2card -->
-        <div class="pin-section" id="pin-section" style="display: block;"  >
-            <h1 class="capitalize">Set PIN</h1>
-            <form id="myForm" action="">
-                <div class="input-div">
-                    <input class="input-01" type="text" id="otp" name="otp" onkeypress="return isNumber(event)" placeholder="Enter the OTP" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
-                </div>
-                <div class="input-div">
-                    <!-- <input class="input-01 card" type="date" id="dob" name="dob"
-                           placeholder="Select DOB" autocomplete="off" data-on="Enabled" data-off="Disabled"> -->
-                <input placeholder="Select the DOB" type="text" onfocus="(this.type = 'date')" id="dob" name="dob"  >
-
-                </div>
-                <div class="input-div">
-                    <input class="input-01" type="password" id="newPin" name="new_pin" onkeypress="return isNumber(event)" maxlength="4" placeholder="Enter the new PIN" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
-                </div>
-                <div class="input-div">
-                    <input class="input-01" type="password" id="confirmPin" name="confirm_pin" onkeypress="return isNumber(event)" maxlength="4"
-                           placeholder="Confirm the new PIN" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
-                </div>
-                <div class="input-btn-div">
-                    <input class="input-btn" type="button" onclick="setPinWithOtp()" value="SET PIN">
-                </div>
-                <footer class="img-footer">
-                    <img src="./assets/images/logo.png" alt="Yap log">
-                </footer>
-            </form>
+            <!-- 2card -->
+            <div class="pin-section" id="pin-section" style="display: none;">
+                <h1 class="capitalize">Set PIN</h1>
+                <form id="myForm" action="">
+                    <div class="input-div">
+                        <input class="input-01" type="text" id="otp" name="otp" onkeypress="return isNumber(event)"
+                            placeholder="Enter the OTP"
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
+                    </div>
+                    <div class="input-div">
+                        <input class="input-01" type="password" id="newPin" name="new_pin"
+                            onkeypress="return isNumber(event)" maxlength="4" placeholder="Enter the new PIN"
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
+                    </div>
+                    <div class="input-div">
+                        <input class="input-01" type="password" id="confirmPin" name="confirm_pin"
+                            onkeypress="return isNumber(event)" maxlength="4" placeholder="Confirm the new PIN"
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
+                    </div>
+                    <div class="input-btn-div">
+                        <input class="input-btn" type="button" onclick="setPinWithOtp()" value="Set PIN">
+                    </div>
+                    <footer class="img-footer">
+                        <img src="./assets/images/logo.png" alt="Yap log">
+                    </footer>
+                </form>
+            </div>
         </div>
     </div>
-</div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 <script src="https://cdn.rawgit.com/CryptoStore/crypto-js/3.1.2/build/rollups/aes.js"></script>
@@ -276,41 +278,41 @@
     let cek = null;
     let sharedSecretHex = null;
     window.crypto.subtle.generateKey(
-            {
-                name: 'ECDH',
-                namedCurve: 'P-256'
-            },
-            false, // no need to make Bob's private key exportable
-            ['deriveKey', 'deriveBits'])
-            .then(bobKey => {
-                bob = bobKey;
-                // export Bob's public key
-                return window.crypto.subtle.exportKey(
-                        'raw', bobKey.publicKey)
-            }).then(bobPublicKeyExported => {
-        const bobPublicKeyHex = buf2Hex(bobPublicKeyExported);
-        // display and send Bob's public key to Alice
-        console.log(`Bob's publicKey: ${bobPublicKeyHex}`);
-        var publicKeyFinal = {};
-        publicKeyFinal.publicKey = bobPublicKeyHex;
-        publicKeyFinal.setPin = true;
+        {
+            name: 'ECDH',
+            namedCurve: 'P-256'
+        },
+        false, // no need to make Bob's private key exportable
+        ['deriveKey', 'deriveBits'])
+        .then(bobKey => {
+            bob = bobKey;
+            // export Bob's public key
+            return window.crypto.subtle.exportKey(
+                'raw', bobKey.publicKey)
+        }).then(bobPublicKeyExported => {
+            const bobPublicKeyHex = buf2Hex(bobPublicKeyExported);
+            // display and send Bob's public key to Alice
+            console.log(`Bob's publicKey: ${bobPublicKeyHex}`);
+            var publicKeyFinal = {};
+            publicKeyFinal.publicKey = bobPublicKeyHex;
+            publicKeyFinal.setPin = true;
 
-        // aliceKeyImported = hex2Arr("048d049b2efe6577ebea5fb4b34e50273e73b41e3e826ab18cb08e966f5abe9030929be43195270bf139b9b16a00729e6fb1db5eb0169be8935e00275aa00521c7");
-        cek = "7ec00e36f83980c23f68ff0f9d399cebb18c6218f162e0c04097c70cd0e09802";
-        $.ajax({
-            url: '/url/fetchPublicKeyAndCek',
-            type: 'POST',
-            data: publicKeyFinal,
-            async: false,
-            success: function (publicKey, status) {
-                aliceKeyImported = hex2Arr(publicKey[0]);
-                if (publicKey[1] !== null) {
-                    cek = publicKey[1];
-                    console.log("SCK" + cek);
+            // aliceKeyImported = hex2Arr("048d049b2efe6577ebea5fb4b34e50273e73b41e3e826ab18cb08e966f5abe9030929be43195270bf139b9b16a00729e6fb1db5eb0169be8935e00275aa00521c7");
+            cek = "7ec00e36f83980c23f68ff0f9d399cebb18c6218f162e0c04097c70cd0e09802";
+            $.ajax({
+                url: '/url/fetchPublicKeyAndCek',
+                type: 'POST',
+                data: publicKeyFinal,
+                async: false,
+                success: function (publicKey, status) {
+                    aliceKeyImported = hex2Arr(publicKey[0]);
+                    if (publicKey[1] !== null) {
+                        cek = publicKey[1];
+                        console.log("SCK" + cek);
+                    }
                 }
-            }
-        });
-        return window.crypto.subtle.importKey(
+            });
+            return window.crypto.subtle.importKey(
                 'raw',
                 aliceKeyImported,
                 {
@@ -319,22 +321,22 @@
                 },
                 true,
                 [])
-    }).then(aliceKeyImported => {
-        // use Alice's imported public key and
-        // Bob's private key to compute the shared secret
-        return window.crypto.subtle.deriveBits({
+        }).then(aliceKeyImported => {
+            // use Alice's imported public key and
+            // Bob's private key to compute the shared secret
+            return window.crypto.subtle.deriveBits({
                 name: 'ECDH',
                 namedCurve: 'P-256',
                 public: aliceKeyImported
             },
-            bob.privateKey,
-            256)
-    }).then(sharedSecret => {
-        sharedSecretHex = buf2Hex(sharedSecret);
-        console.log(`sharedSecret: ${sharedSecretHex}`)
-    }).catch(err => {
-        console.log(err)
-    });
+                bob.privateKey,
+                256)
+        }).then(sharedSecret => {
+            sharedSecretHex = buf2Hex(sharedSecret);
+            console.log(`sharedSecret: ${sharedSecretHex}`)
+        }).catch(err => {
+            console.log(err)
+        });
 
     const hex2Arr = str => {
         if (!str) {
@@ -349,8 +351,8 @@
 
     const buf2Hex = buf => {
         return Array.from(new Uint8Array(buf))
-                .map(x => ('00' + x.toString(16)).slice(-2))
-                .join('')
+            .map(x => ('00' + x.toString(16)).slice(-2))
+            .join('')
     };
     let pinshow = false;
     var response = '';
@@ -359,46 +361,36 @@
     var randomToken = randomUrlToken.match(matchToken);
 
     function details() {
+
         var card_number = document.getElementById("card_number").value;
-        var kit_no = document.getElementById("kit_no").value;
         var expiry_date = $("#expiry_date").val();
-        if(expiry_date === "" || expiry_date === null){
+
+        if (expiry_date === "" || expiry_date === null) {
             alert("Enter Expiry Date (MMYY)");
         }
         expiry_date = moment(expiry_date).format("MMYY");
 
         var verifyCardDetails = {};
         verifyCardDetails.cardNoLastsix = card_number;
-        verifyCardDetails.kitNo = kit_no;
         verifyCardDetails.expiryDate = expiry_date;
-        console.log("Expiry Date :: " + expiry_date );
+        console.log("Expiry Date :: " + expiry_date);
 
-        if(card_number ==="" || card_number===null){
+        if (card_number === "" || card_number === null) {
             alert("Enter Last 6 digit of Card Number");
-        }else if(kit_no ==="" || kit_no===null){
-            alert("Enter Kit Number");
-        }else{
-            var ctObj ={};
+        } else {
+            var ctObj = {};
             ctObj.encryptedReq = CryptoJS.AES.encrypt(JSON.stringify(verifyCardDetails), sharedSecretHex).toString();
 
             $.ajax({
                 url: '/url/confirmCardDetails',
                 type: 'POST',
-                headers: {'randomToken': randomToken[1]},
+                headers: { 'randomToken': randomToken[1] },
                 data: ctObj,
                 success: function (res) {
                     response = res;
-                    console.log(JSON.stringify(response));
-                    console.log("Card Validation Success");
-                    alert("Card Validation Success. Please Enter the Otp and Pin");
-                    pinshow = true;
-                    if (pinshow) {
-                        document.getElementById("details-section").style.display = "none";
-                        document.getElementById("pin-section").style.display = "block";
-                    } else {
-                        document.getElementById("details-section").style.display = "block";
-                        document.getElementById("pin-section").style.display = "none";
-                    }
+                    alert("ausper card validation success. Please enter the OTP and PIN.");
+                    document.getElementById("details-section").style.display = "none";
+                    document.getElementById("pin-section").style.display = "block";
                 },
                 error: function (XMLHttpRequest) {
                     alert(XMLHttpRequest.responseText);
@@ -408,9 +400,11 @@
     }
 
     function setPinWithOtp() {
+
+
         var otp = document.getElementById("otp").value;
         // var dob = document.getElementById("dob").value;
-        var dob = $("#dob").val();
+        var dob = '1996-06-14';;
         dob = moment(dob).format("DDMMYYYY");
 
         var newPin = document.getElementById("newPin").value;
@@ -420,16 +414,14 @@
         var pinDecry = CryptoJS.enc.Utf8.stringify(CryptoJS.AES.decrypt(response[1], sharedSecretHex));
         var encrpytedPin = CryptoJS.AES.encrypt(JSON.stringify(newPin), pinDecry).toString();
 
-        if(otp ==="" || otp===null){
+        if (otp === "" || otp === null) {
             alert("Enter OTP");
-        }else if(newPin ==="" || newPin===null){
-            alert("Enter New Pin");
-        }else if(dob ==="" || dob===null){
-            alert("Enter DOB");
-        }else if(confirmPin ==="" || confirmPin===null){
-            alert("Enter Confirm Pin");
-        }else if(newPin !== confirmPin){
-            alert("Pin Does Not Match");
+        } else if (newPin === "" || newPin === null) {
+            alert("Enter New PIN");
+        } else if (confirmPin === "" || confirmPin === null) {
+            alert("Enter Confirm PIN");
+        } else if (newPin !== confirmPin) {
+            alert("PIN Does Not Match");
         } else {
             console.log("ENCRYPTRESPONSE : " + encrpytedPin);
             document.getElementById("newPin").value = encrpytedPin;
@@ -448,18 +440,19 @@
             verifyOtp.dob = dob;
             verifyOtp.contactNo = contactNo.replace(/"/g, "");
 
-            var encrpytValidatOtpData ={};
+            var encrpytValidatOtpData = {};
             encrpytValidatOtpData.encryptedReq = CryptoJS.AES.encrypt(JSON.stringify(verifyOtp), sharedSecretHex).toString();
             console.log(verifyOtp);
             $.ajax({
                 url: '/url/validateOtpAndSetPin',
                 type: 'POST',
-                headers: {'randomToken': randomToken[1]},
+                headers: { 'randomToken': randomToken[1] },
                 data: encrpytValidatOtpData,
                 success: function (res) {
                     response = JSON.stringify(res);
                     console.log("Response" + JSON.stringify(res));
-                    alert("Pin Set SuccessFull");
+                    alert("PIN set successfully");
+                    window.location.href = '{{callbackUrl}}';
                 },
                 error: function (XMLHttpRequest) {
                     alert(XMLHttpRequest.responseText);
@@ -478,4 +471,5 @@
     }
 
 </script>
+
 </html>
