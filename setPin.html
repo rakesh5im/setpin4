@@ -147,6 +147,19 @@
             font-family: "Gotham-Bold";
         }
 
+        .labelhead{
+
+            padding: 20px 10px;
+          
+            font-size: 17px;
+            color: black;
+            height: 25px;
+            text-align: center;
+            margin-bottom: 25px;
+            font-family: "Gotham-light";
+
+        }
+
         .input-pd {
             padding: 0px 50px;
         }
@@ -182,6 +195,13 @@
             font-size: 15px;
             transition: 250ms width ease, 250ms border-color ease;
         }
+        input[type="date"] {
+        display: block;
+        -webkit-appearance: textfield;
+        -moz-appearance: textfield;
+        min-height: 1.1em;
+      }
+     
 
         @media (min-width:320px) {
             .capitalize {
@@ -223,17 +243,19 @@
     <div class="main-section">
         <div class="card-section">
             <!-- 1st card -->
-            <div class="details-section" id="details-section" style="display: none;">
+            <div class="details-section" id="details-section" style="display: block;">
                 <h1 class="capitalize">Enter ausper Card Details</h1>
                 <form id="myForm" action="">
                     <div class="input-div">
+                        <label class="labelhead">Enter last 6 digits of card number</label>
                         <input class="input-01" type="text" id="card_number" name="card_number"
-                            placeholder="Enter last 6 digits of card number" onkeypress="return isNumber(event)"
+                            placeholder="" onkeypress="return isNumber(event)"
                             oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
                             maxlength="6">
                     </div>
                     <div class="input-div">
-                        <input placeholder="Choose card’s expiry date" type="text" onfocus="(this.type = 'month')"
+                        <label class="labelhead">Choose card’s expiry date</label>
+                        <input class="input-01 " placeholder="" type="month" 
                             id="expiry_date" name="expiry_date">
                     </div>
                     <div class="input-btn-div">
@@ -246,29 +268,36 @@
             </div>
 
             <!-- 2card -->
-            <div class="pin-section" id="pin-section" style="display: block;">
+            <div class="pin-section" id="pin-section" style="display: none;">
                 <h1 class="capitalize">Set PIN</h1>
                 <form id="myForm" action="">
                     <div class="input-div">
+                        <label class="labelhead">Enter the OTP</label>
+
                         <input class="input-01" type="text" id="otp" name="otp" onkeypress="return isNumber(event)"
-                            placeholder="Enter the OTP"
+                            placeholder=""
                             oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
                     </div>
                     <div class="input-div">
+                        <label class="labelhead">Select the DOB</label>
+
                         <!-- <input class="input-01 card" type="date" id="dob" name="dob"
                            placeholder="Select DOB" autocomplete="off" data-on="Enabled" data-off="Disabled"> -->
-                        <input placeholder="Select the DOB" type="text" onfocus="(this.type = 'date')" id="dob"
+                        <input class="input-01" placeholder="" type="date"  id="dob"
                             name="dob">
 
                     </div>
                     <div class="input-div">
+                        <label class="labelhead">Enter the new PIN</label>
+
                         <input class="input-01" type="password" id="newPin" name="new_pin"
-                            onkeypress="return isNumber(event)" maxlength="4" placeholder="Enter the new PIN"
+                            onkeypress="return isNumber(event)" maxlength="4" placeholder=""
                             oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
                     </div>
                     <div class="input-div">
+                        <label class="labelhead">Confirm the new PIN</label>
                         <input class="input-01" type="password" id="confirmPin" name="confirm_pin"
-                            onkeypress="return isNumber(event)" maxlength="4" placeholder="Confirm the new PIN"
+                            onkeypress="return isNumber(event)" maxlength="4" placeholder=""
                             oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
                     </div>
                     <div class="input-btn-div">
