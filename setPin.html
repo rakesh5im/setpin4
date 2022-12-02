@@ -151,7 +151,7 @@
 
             padding: 20px 10px;
           
-            font-size: 17px;
+            font-size: 12px;
             color: black;
             height: 25px;
             text-align: center;
@@ -196,6 +196,12 @@
             transition: 250ms width ease, 250ms border-color ease;
         }
         input[type="date"] {
+        display: block;
+        -webkit-appearance: textfield;
+        -moz-appearance: textfield;
+        min-height: 1.1em;
+      }
+      input[type="month"] {
         display: block;
         -webkit-appearance: textfield;
         -moz-appearance: textfield;
